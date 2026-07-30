@@ -1,0 +1,9 @@
+# Default owners for everything in the repository:
+* @zovium
+
+# Specific team or user for backend / API files:
+/src/api/ @zovium @r-krishna-mondal @anshugithub1
+
+# Specific owner for documentation or root config files:
+/*.md @r-krishna-mondal @anshugithub1
+/LICENSE @zovium

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* ── Perch Design System ── */
+:root {
+  --color-bg: #F5EFE6;
+  --color-surface: #FFFDF9;
+  --color-primary: #8B5E3C;
+  --color-primary-hover: #6F4A2E;
+  --color-accent: #7C9473;
+  --color-accent-hover: #667D5E;
+  --color-text: #3A2E27;
+  --color-muted: #A9998A;
+  --color-danger: #B9542D;
+  --color-danger-hover: #9A4526;
+  --color-border: #E6DDD3;
+  --color-overlay: rgba(58, 46, 39, 0.5);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgba(58, 46, 39, 0.06);
+  --shadow-md: 0 4px 12px rgba(58, 46, 39, 0.08);
+  --shadow-lg: 0 8px 24px rgba(58, 46, 39, 0.12);
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Sign-in Redesign Tokens */
+  --bg: #F5EFE6;
+  --bg-soft: #EFE6D6;
+  --surface: #FFFDF9;
+  --ink: #3A2A1E;
+  --coffee: #6B3A28;
+  --coffee-deep: #4A2818;
+  --caramel: #C97B4A;
+  --sage: #8A9A6E;
+  --muted: #95816D;
+  --border: #E3D8C6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: var(--radius-full);
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Bytebox Sign-in Redesign Keyframes ── */
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(0.8);
+  }
+  40% {
+    opacity: 0.65;
+    transform: translateY(-8px) scaleX(1.1);
+  }
+  80% {
+    opacity: 0.25;
+    transform: translateY(-18px) scaleX(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scaleX(1.5);
+  }
+}
+
+@keyframes floatBlob1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 20px) scale(1.1);
+  }
+}
+
+@keyframes floatBlob2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, -25px) scale(1.15);
+  }
+}
+
+@keyframes entranceFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-steam-1 {
+  animation: steamRise 3.2s ease-out infinite 0s;
+}
+
+.animate-steam-2 {
+  animation: steamRise 3.2s ease-out infinite 0.6s;
+}
+
+.animate-steam-3 {
+  animation: steamRise 3.2s ease-out infinite 1.2s;
+}
+
+.animate-blob-1 {
+  animation: floatBlob1 24s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: floatBlob2 26s ease-in-out infinite;
+}
+
+.entrance-stagger-1 {
+  animation: entranceFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 0ms;
+  opacity: 0;
+}
+
+.entrance-stagger-2 {
+  animation: entranceFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 130ms;
+  opacity: 0;
+}
+
+.entrance-stagger-3 {
+  animation: entranceFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 260ms;
+  opacity: 0;
+}
+
+.entrance-stagger-4 {
+  animation: entranceFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 390ms;
+  opacity: 0;
+}
+
+.entrance-stagger-5 {
+  animation: entranceFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 520ms;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+/* ── Google Button Interaction States ── */
+.btn-google {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-google:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--caramel);
+  box-shadow: 0 8px 24px rgba(201, 123, 74, 0.15);
+}
+
+.btn-google:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-google:focus-visible {
+  outline: none;
+  border-color: var(--caramel);
+  box-shadow: 0 0 0 3.5px rgba(201, 123, 74, 0.35);
+}
+
+.delay-100 { animation-delay: 100ms; opacity: 0; }
+.delay-200 { animation-delay: 200ms; opacity: 0; }
+.delay-300 { animation-delay: 300ms; opacity: 0; }
+.delay-400 { animation-delay: 400ms; opacity: 0; }
+.delay-500 { animation-delay: 500ms; opacity: 0; }
+
+/* ── Accessibility: Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-steam-1, .animate-steam-2, .animate-steam-3, .animate-blob-1, .animate-blob-2 {
+    animation: none !important;
+    opacity: 0.3 !important;
+  }
+  .entrance-stagger-1, .entrance-stagger-2, .entrance-stagger-3, .entrance-stagger-4, .entrance-stagger-5 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ── Status Colors ── */
+.status-received { color: var(--color-primary); background-color: rgba(139, 94, 60, 0.1); }
+.status-preparing { color: #B8860B; background-color: rgba(184, 134, 11, 0.1); }
+.status-ready { color: var(--color-accent); background-color: rgba(124, 148, 115, 0.1); }
+.status-served { color: var(--color-muted); background-color: rgba(169, 153, 138, 0.1); }
